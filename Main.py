@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import fileinput
 import sys
 
@@ -19,14 +18,13 @@ print Input
 #Input = "GLP.txt"
 
 
-=======
 #Globle File Management
 #Input="uni.mouse.txt"					# Globle File Input
-Input="UniProt.dat"
+#Input="UniProt.dat"
 #Input="HumanReview.txt"					# Globle File Input
 #Testing 
 #Input = "GLP.txt"
->>>>>>> e08c2f8... SeqFilerFiles
+
 """
 AATarget1 = "TargetSequencePosition1.txt"
 AATarget2 = "TargetSequencePosition2.txt"
@@ -41,11 +39,8 @@ handle = open (Input,"r")
 records = list(SwissProt.parse(handle))
 print "Done Big List Parsing"
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 """
 HumanOut="HumanAccessions.txt"				# Human Protein Accession File 
 							# (This need to be fasta format for later Analysis) 
@@ -60,10 +55,6 @@ CytoOutput="CytoList.txt"
 MitoOutput="MitoList.txt"
 """
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 """
 InputSeqRecord=MAPUpdateOutput
 InputSeqFullRecord=Input
@@ -73,10 +64,7 @@ InputSeqFullRecord=Input
 #Global Parameter Setup
 SimilarityCutOffRate=0.98
 """
-<<<<<<< HEAD
 
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 """
 #Sort Human Proteins from UniProt Proteins
 import ModuleHuman
@@ -97,10 +85,6 @@ with open (AATarget1,"rU") as fSeq1:
 				TargetSeq.append(aa1+aa2) 
 """
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 with open ("TargetDipeptide.txt","rU") as fSeq1: 
 	TargetSeq.append(fSeq1)
 
@@ -112,10 +96,7 @@ FullRecord=records
 import ModuleHumanMAP
 ModuleHumanMAP.MAPFilter(HumanMAPInput,HumanMAPOut)
 """
-<<<<<<< HEAD
 
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 """
 #In order to Filter duplication, Alignment is needed
 import ModuleAln
@@ -134,21 +115,18 @@ import ModulePepProcess
 with open ("GlobalStat.txt","w") as Stat:
 	## File Name generation
 	for targetseq in TargetSeq: 
-<<<<<<< HEAD
 		OutputFileM="Seq(" +str(targetseq) +")MitoTarget.dat"
 		OutputFileMN="Seq(" +str(targetseq) +")MitoNonTarget.dat"
 		OutputFileCyto="Seq(" +str(targetseq) +")CytoTarget.dat"
 		OutputFileCytoN="Seq(" +str(targetseq) +")CytoNonTarget.dat"
 		OutputFileExtra="Seq(" +str(targetseq) +")ExtracellularTarget.dat"
 		OutputFileExtraN="Seq(" +str(targetseq) +")ExtracellularNonTarget.dat"
-=======
 		OutputFileM="Seq("+targetseq+")MitoTarget.dat"
 		OutputFileMN="Seq("+targetseq+")MitoNonTarget.dat"
 		OutputFileCyto="Seq("+targetseq+")CytoTarget.dat"
 		OutputFileCytoN="Seq("+targetseq+")CytoNonTarget.dat"
 		OutputFileExtra="Seq("+targetseq+")ExtracellularTarget.dat"
 		OutputFileExtraN="Seq("+targetseq+")ExtracellularNonTarget.dat"
->>>>>>> e08c2f8... SeqFilerFiles
 
 		#SeparationFilter(FullRecord,TargetSeq,OutputFileM,OutputFileExtra,OutputFileCyto,OutputFileMN,OutputFileExtraN,OutputFileCytoN)
 		ModulePepProcess.SeparationFilter(FullRecord,targetseq,OutputFileM,OutputFileExtra,OutputFileCyto,OutputFileMN,OutputFileExtraN,OutputFileCytoN)
@@ -169,10 +147,7 @@ with open ("GlobalStat.txt","w") as Stat:
 		Stat.write ("Total "+str(GlobalStat+GlobalStatNon)+"Found"+"\n")
 		Stat.write ("\n")		
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 """
 ##Separate Mito List
 InputSeqRecord=MitoOutput	# Testing 	"HumanAccessions.txt" 
@@ -184,11 +159,8 @@ OutputFileChain="MitoChain.txt"
 #SeparationFilter(InputSeqRecord,FullRecord,OutputFileM,OutputFilePep,OutputFileChain)
 ModulePepProcess.SeparationFilter(InputSeqRecord,FullRecord,OutputFileM,OutputFilePep,OutputFileChain)
 """
-<<<<<<< HEAD
 
 """
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 #Globle File Management
 Input="UniProt.dat"					# Globle File Input
 #Input="HumanReview.txt"					# Globle File Input
@@ -206,10 +178,7 @@ from Bio import SwissProt
 handle = open (Input,"rU")
 records = list(SwissProt.parse(handle))
 print "Done Big List Parsing"
-<<<<<<< HEAD
 """
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 
 """
 HumanOut="HumanAccessions.txt"				# Human Protein Accession File 
@@ -234,12 +203,8 @@ InputSeqFullRecord=Input
 #Global Parameter Setup
 SimilarityCutOffRate=0.98
 """
-<<<<<<< HEAD
 
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 """
-#Sort Human Proteins from UniProt Proteins
 import ModuleHuman
 ModuleHuman.HumanProtein(records,HumanOut)
 """
@@ -259,20 +224,13 @@ with open (AATarget1,"rU") as fSeq1:
 FullRecord=records
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e08c2f8... SeqFilerFiles
 """
 import ModuleHumanMAP
 ModuleHumanMAP.MAPFilter(HumanMAPInput,HumanMAPOut)
 """
-<<<<<<< HEAD
 
-=======
->>>>>>> e08c2f8... SeqFilerFiles
+
 """
-#In order to Filter duplication, Alignment is needed
 import ModuleAln
 ModuleAln.Aln(AlignInput,MAPUpdateOutPut,SimilarityCutOffRate)		# Aln(AlignInput,FilteredList,SimilarityCutOffRate)
 

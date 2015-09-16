@@ -136,7 +136,7 @@ def SeparationFilter(FullRecords,TargetSeq,OutputFileM,OutputFileExtra,OutputFil
 						# print record.sequence[(PositionA-1):PositionB] 
 						# print TargetSeq		
 						
-						if (abs(PositionA-PositionB) <= 120):		
+						if (abs(PositionA-PositionB) <= 175):		
 							fOFE.write (">{0}\n".format(record.accessions))
 							fOFE.write ("\t{0}\n".format(record.entry_name))
 							fOFE.write ("\t{0}\n".format(record.keywords))
