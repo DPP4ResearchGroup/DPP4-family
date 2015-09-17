@@ -6,7 +6,7 @@ echo "Please create a result depository folder name"
 read -e  NewFolder
 mkdir $NewFolder
 
-: '
+
 # Run the first master script 
 bash 1-MasterRun.sh
 
@@ -15,7 +15,7 @@ bash 2-MasterRun.sh
 
 # Run the Third master script
 bash 3-MasterRun.sh
-'
+
 
 # Clean up the home directory and deposit result to result depository
 mv *.txt $NewFolder
