@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # This script coordinates all the processes and complete automate the analysisi
 
 # Ask for a result depository folder 
